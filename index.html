@@ -138,6 +138,23 @@
         .gallery-item img:hover {
             transform: scale(1.03);
         }
+        .btn-booking {
+            display: inline-block;
+            background: #f39c12;
+            color: #1a1a1a;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-top: 1rem;
+        }
+        .btn-booking:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+        }
         footer {
             text-align: center;
             padding: 2rem;
@@ -216,12 +233,11 @@
             </div>
         </section>
 
-        <section id="kontakt">
+        <section id="kontakt" style="text-align: center;">
             <h2>Zarezerwuj termin / Zamów wycenę</h2>
-            <p style="margin-bottom: 1.5rem;">Wypełnij poniższy formularz, aby przesłać do nas zgłoszenie:</p>
+            <p style="margin-bottom: 1.5rem;">Kliknij poniższy przycisk, aby przejść do formularza rezerwacji:</p>
             
-            <iframe data-tally-src="https://tally.so/embed/eqObPE?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="350" frameborder="0" marginheight="0" marginwidth="0" title="Rezerwacja TRZEBIATECH"></iframe>
-            <script async src="https://tally.so/widgets/embed.js"></script>
+            <a href="https://tally.so/r/eqObPE" target="_blank" class="btn-booking">Przejdź do formularza rezerwacji</a>
         </section>
 
     </div>
