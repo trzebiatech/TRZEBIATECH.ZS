@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRZEBIATECH Usługi Elektryczne</title>
+    <style>
+        :root {
+            --primary-color: #ffcc00;
+            --dark-color: #1a1a1a;
+            --text-color: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            background-image: url('tlo.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header / Navigation */
+        header {
+            background-color: rgba(26, 26, 26, 0.95);
+            color: #fff;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Sekcja Hero z przyciemnieniem tylko u góry */
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+            height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            color: #ddd;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #e6b800;
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* O nas / Zespół */
+        .about-box {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .about-box h3 {
+            color: var(--dark-color);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .about-card {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .about-card h4 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Usługi */
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border-top: 4px solid var(--primary-color);
+            color: #333;
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .service-card p {
+            color: #555;
+        }
+
+        /* Galeria */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            background: #fff;
+            height: 250px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Kontakt i Rezerwacja */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            color: #333;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            font-size: 1.5rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            color: #555;
+        }
+
+        .contact-info span {
+            font-weight: bold;
+            color: #000;
+        }
+
+        .hours-box {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .hours-box h4 {
+            margin-bottom: 8px;
+            color: var(--dark-color);
+        }
+
+        .contact-form, .comment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 12px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            color: #333;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 90px;
+        }
+
+        /* Sekcja Komentarzy */
+        .comments-section {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            color: #333;
+        }
+
+        .comments-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .comments-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+
+        .comment-card {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: var(--dark-color);
+        }
+
+        .comment-stars {
+            color: #ffaa00;
+        }
+
+        .comment-text {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .no-comments {
+            color: #777;
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(26, 26, 26, 0.95);
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .about-grid, .comments-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body id="gora">
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo">TRZEBIATECH <span>Usługi Elektryczne</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#o-nas">O nas</a></li>
+                    <li><a href="#uslugi">Usługi</a></li>
+                    <li><a href="#galeria">Realizacje</a></li>
+                    <li><a href="#opinie">Opinie</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content container">
+            <h1>Profesjonalne <span>Usługi Elektryczne</span></h1>
+            <p>Bezpieczeństwo, nowoczesne instalacje i rzetelne wykonanie dla Twojego domu, firmy oraz dużych inwestycji.</p>
+            <a href="#kontakt" class="btn">Zarezerwuj termin / Darmowa wycena</a>
+        </div>
+    </section>
+
+    <section id="o-nas" class="container">
+        <h2 class="section-title">O Nas i Kwalifikacje</h2>
+        <div class="about-box">
+            <h3>Doświadczona ekipa elektryków do zadań specjalnych</h3>
+            <p>Jesteśmy zgranym zespołem składającym się z <strong>3 wykwalifikowanych osób</strong>. Podejmujemy się zarówno mniejszych zleceń domowych, jak i chętnie przyjmujemy zgłoszenia na <strong>duże inwestycje komercyjne i przemysłowe</strong>.</p>
+            
+            <div class="about-grid">
+                <div class="about-card">
+                    <h4>Kwalifikacje Zespołu</h4>
+                    <p>• <strong>2 osoby</strong> posiadają uprawnienia SEP G1 D do 1kV.<br>• Pełne wsparcie techniczne i bezpieczeństwo przy każdej instalacji.</p>
+                </div>
+                <div class="about-card">
+                    <h4>Nadzór i Pomiary</h4>
+                    <p>• <strong>Brygadzista</strong> z uprawnieniami SEP G1 D+E oraz uprawnieniami do wykonywania pomiarów do 1kV.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="uslugi" class="container">
+        <h2 class="section-title">Nasze Usługi</h2>
+        <div class="services-list">
+            <div class="service-card">
+                <h3>Instalacje Elektryczne</h3>
+                <p>Montaż nowych instalacji w budynkach mieszkalnych, komercyjnych oraz na dużych inwestycjach, modernizacja systemów i rozdzielnic.</p>
+            </div>
+            <div class="service-card">
+                <h3>Pomiary i Badania</h3>
+                <p>Kompleksowe pomiary elektryczne odbiorcze i okresowe (wykonywane przez certyfikowanego brygadzistę), lokalizacja uszkodzeń oraz przeglądy.</p>
+            </div>
+            <div class="service-card">
+                <h3>Usuwanie Awarii</h3>
+                <p>Szybkie i skuteczne pogotowie elektryczne – diagnozowanie i usuwanie nagłych usterek w systemach zasilania.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="container">
+        <h2 class="section-title">Galeria Realizacji</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="praca.jpg" alt="Realizacja 1"></div>
+            <div class="gallery-item"><img src="praca2.jpg" alt="Realizacja 2"></div>
+            <div class="gallery-item"><img src="praca3.jpg" alt="Realizacja 3"></div>
+            <div class="gallery-item"><img src="praca4.jpg" alt="Realizacja 4"></div>
+            <div class="gallery-item"><img src="praca5.jpg" alt="Realizacja 5"></div>
+            <div class="gallery-item"><img src="praca6.jpg" alt="Realizacja 6"></div>
+            <div class="gallery-item"><img src="praca7.jpg" alt="Realizacja 7"></div>
+            <div class="gallery-item"><img src="praca8.jpg" alt="Realizacja 8"></div>
+        </div>
+    </section>
+
+    <section id="opinie" class="container">
+        <h2 class="section-title">Opinie Klientów</h2>
+        <div class="comments-section">
+            <div class="comments-grid">
+                <!-- Lista opinii -->
+                <div>
+                    <h3 style="margin-bottom: 20px; color: var(--dark-color);">Co mówią klienci</h3>
+                    <div class="comments-list" id="commentsList">
+                        <p class="no-comments" id="noCommentsText">Brak opinii. Bądź pierwszy, który doda opinię!</p>
+                    </div>
+                </div>
+
+                <!-- Formularz dodawania opinii -->
+                <div>
+                    <h3 style="margin-bottom: 20px; color: var(--dark-color);">Dodaj swoją opinię</h3>
+                    <form class="comment-form" id="commentForm">
+                        <div class="form-group">
+                            <label for="commentName">Twoje Imię / Firma</label>
+                            <input type="text" id="commentName" required placeholder="np. Jan Kowalski">
+                        </div>
+                        <div class="form-group">
+                            <label for="commentRating">Ocena</label>
+                            <select id="commentRating">
+                                <option value="★★★★★">5 Gwiazdek (★★★★★)</option>
+                                <option value="★★★★☆">4 Gwiazdki (★★★★☆)</option>
+                                <option value="★★★☆☆">3 Gwiazdki (★★★☆☆)</option>
+                                <option value="★★☆☆☆">2 Gwiazdki (★★☆☆☆)</option>
+                                <option value="★☆☆☆☆">1 Gwiazdka (★☆☆☆☆)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="commentBody">Twoja opinia</label>
+                            <textarea id="commentBody" required placeholder="Napisz kilka słów o współpracy..."></textarea>
+                        </div>
+                        <button type="submit" class="btn">Opublikuj opinię</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontakt" class="container">
+        <h2 class="section-title">Kontakt i Rezerwacja Terminu</h2>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h3>Skontaktuj się i wybierz termin</h3>
+                <p>Zadzwoń do nas na <strong>darmową wycenę telefoniczną</strong> lub wypełnij formularz, aby zapytać o termin i zgłosić zlecenie (obsługujemy również duże inwestycje!).</p>
+                <p>📞 Telefon: <span>514 719 868</span></p>
+                <p>📧 E-mail: <span>trzebiat999@outlook.com</span></p>
+                <p>📍 Obszar działania: <span>Szczecin + 150 km</span></p>
+                
+                <div class="hours-box">
+                    <h4>Godziny pracy:</h4>
+                    <p>Poniedziałek – Piątek: <span>07:00 – 17:00</span></p>
+                    <p>Soboty: <span>08:00 – 16:00</span></p>
+                </div>
+            </div>
+            <form class="contact-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Twoje Imię</label>
+                    <input type="text" id="name" name="name" required placeholder="np. Jan Kowalski">
+                </div>
+                <div class="form-group">
+                    <label for="email">Twój E-mail / Telefon</label>
+                    <input type="text" id="contact_info" name="contact_info" required placeholder="np. jan@example.com lub tel. ...">
+                </div>
+                <div class="form-group">
+                    <label for="appointment_date">Wybierz preferowany termin</label>
+                    <input type="datetime-local" id="appointment_date" name="appointment_date" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Opis zlecenia / dużej inwestycji</label>
+                    <textarea id="message" name="message" required placeholder="Napisz krótko, w czym pomóc..."></textarea>
+                </div>
+                <button type="submit" class="btn">Wyślij rezerwację</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 TRZEBIATECH Usługi Elektryczne. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Skrypt obsługujący dodawanie opinii na żywo
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('commentName').value;
+            const rating = document.getElementById('commentRating').value;
+            const body = document.getElementById('commentBody').value;
+            
+            const commentsList = document.getElementById('commentsList');
+            const noCommentsText = document.getElementById('noCommentsText');
+            
+            if (noCommentsText) {
+                noCommentsText.remove();
+            }
+            
+            const newCard = document.createElement('div');
+            newCard.className = 'comment-card';
+            newCard.innerHTML = `
+                <div class="comment-header">
+                    <span>${name}</span>
+                    <span class="comment-stars">${rating}</span>
+                </div>
+                <p class="comment-text">${body}</p>
+            `;
+            
+            commentsList.prepend(newCard);
+            document.getElementById('commentForm').reset();
+            alert('Dziękujemy za dodanie opinii!');
+        });
+    </script>
+
+</body>
+</html>

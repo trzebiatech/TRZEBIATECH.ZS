@@ -1,0 +1,32 @@
+/* Styl dla galerii zdjęć projektów */
+.gallery {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.gallery-img {
+    width: calc(50% - 8px); /* Dwa zdjęcia obok siebie */
+    height: 150px;
+    object-fit: cover;      /* Dba o to, żeby zdjęcia się nie rozciągały */
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s;
+}
+
+.gallery-img:hover {
+    transform: scale(1.03); /* Delikatne powiększenie po najechaniu myszką */
+}.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.logo {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 10px;
+}
