@@ -47,6 +47,7 @@
             text-decoration: none;
             padding: 0.75rem 1.5rem;
             font-weight: 600;
+            transition: background 0.3s;
         }
         nav a:hover {
             background: #f39c12;
@@ -102,6 +103,7 @@
             border: 1px solid #eee;
             padding: 1.5rem;
             border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
         .feature-card h3 {
             color: #f39c12;
@@ -113,12 +115,20 @@
             gap: 1rem;
             margin-top: 1.5rem;
         }
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
         .gallery-item img {
             width: 100%;
             height: 220px;
             object-fit: cover;
             display: block;
-            border-radius: 6px;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.03);
         }
         footer {
             text-align: center;
@@ -126,6 +136,10 @@
             background: #1a1a1a;
             color: #bbb;
             margin-top: 3rem;
+        }
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 2rem; }
+            header h1 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -187,25 +201,16 @@
             <h2>Nasze Realizacje</h2>
             <p>Zobacz przykłady naszych ostatnich prac:</p>
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="praca.jpg" alt="Realizacja 1"></div>
-                <div class="gallery-item"><img src="praca2.jpg" alt="Realizacja 2"></div>
-                <div class="gallery-item"><img src="praca3.jpg" alt="Realizacja 3"></div>
-                <div class="gallery-item"><img src="praca4.jpg" alt="Realizacja 4"></div>
-                <div class="gallery-item"><img src="praca5.jpg" alt="Realizacja 5"></div>
-                <div class="gallery-item"><img src="praca6.jpg" alt="Realizacja 6"></div>
-                <div class="gallery-item"><img src="praca7.jpg" alt="Realizacja 7"></div>
-                <div class="gallery-item"><img src="praca8.jpg" alt="Realizacja 8"></div>
+                <div class="gallery-item"><img src="praca.jpg" alt="Realizacja TRZEBIATECH"></div>
             </div>
         </section>
 
-        <section id="kontakt" style="text-align: center;">
+        <section id="kontakt">
             <h2>Zarezerwuj termin / Zamów wycenę</h2>
-            <p style="margin-bottom: 1.5rem;">Chcesz omówić zlecenie lub zarezerwować termin? Kliknij przycisk poniżej, aby otworzyć bezpieczny formularz:</p>
+            <p style="margin-bottom: 1.5rem;">Wypełnij poniższy formularz, aby przesłać do nas zgłoszenie:</p>
             
-            <!-- Czysty odnośnik HTML stylizowany na przycisk - zero formularzy serwerowych -->
-            <a href="https://tally.so/r/eqObPE" target="_blank" style="display: inline-block; padding: 15px 30px; background-color: #f39c12; color: #1a1a1a; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                Otwórz formularz rezerwacji
-            </a>
+            <iframe data-tally-src="https://tally.so/embed/eqObPE?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="350" frameborder="0" marginheight="0" marginwidth="0" title="Rezerwacja TRZEBIATECH"></iframe>
+            <script async src="https://tally.so/widgets/embed.js"></script>
         </section>
 
     </div>
