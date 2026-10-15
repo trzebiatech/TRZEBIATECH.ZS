@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRZEBIATECH - Instalacje Elektryczne & Domki Modułowe od A do Z | Szczecin</title>
+    <meta name="description" content="TRZEBIATECH - Kompleksowe usługi elektryczne, montaż rozdzielnic, pomiary oraz budowa i stawianie domków modułowych od A do Z w Szczecinie i promieniu 100 km.">
+
+    <!-- Dane Strukturalne Schema.org pod pozycjonowanie AI (GEO) oraz SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["Electrician", "GeneralContractor", "LocalBusiness"],
+          "@id": "https://trzebiatech.pl/#organization",
+          "name": "TRZEBIATECH Usługi Elektryczne i Domki Modułowe",
+          "url": "https://trzebiatech.pl",
+          "image": "https://trzebiatech.pl/praca.jpg",
+          "description": "Profesjonalne usługi elektryczne, wykonywanie instalacji, pomiary odbiorcze oraz kompleksowa budowa i montaż domków modułowych od A do Z.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Szczecin",
+            "addressCountry": "PL"
+          },
+          "areaServed": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+              "@type": "GeoCoordinates",
+              "latitude": 53.4285,
+              "longitude": 14.5528
+            },
+            "geoRadius": "100000"
+          },
+          "knowsAbout": [
+            "Instalacje elektryczne",
+            "Montaż rozdzielnic elektrycznych",
+            "Pomiary i odbiory elektryczne",
+            "Automatyka budynkowa",
+            "Budowa domków modułowych od A do Z",
+            "Montaż domków całorocznych i letniskowych",
+            "Kompleksowe prace wykończeniowe i przyłącza"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Zakres Usług TRZEBIATECH",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Kompleksowe Instalacje Elektryczne i Pomiary"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Stawianie Domków Modułowych od A do Z"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: url('tlo.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        header {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid #f39c12;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            color: #bbb;
+            font-size: 1.1rem;
+        }
+        nav {
+            background: #333;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background: #f39c12;
+            color: #1a1a1a;
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+            color: white;
+            text-align: center;
+            padding: 6rem 1.5rem;
+            margin-bottom: 2rem;
+            width: 100%;
+        }
+        .hero h2 {
+            font-size: 2.8rem;
+            border: none;
+            padding: 0;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 850px;
+            margin: 0 auto;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto 2rem auto;
+            padding: 0 1.5rem;
+        }
+        section {
+            background: #fff;
+            margin-bottom: 2rem;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        h2 {
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-left: 5px solid #f39c12;
+            padding-left: 10px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .feature-card {
+            background: #fdfdfd;
+            border: 1px solid #eee;
+            padding: 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .feature-card.highlight {
+            border: 2px solid #f39c12;
+            background: #fffdf9;
+        }
+        .feature-card h3 {
+            color: #f39c12;
+            margin-bottom: 0.75rem;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.03);
+        }
+        /* Style Kalkulatora */
+        .calc-box {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            margin-top: 1rem;
+        }
+        .calc-group {
+            margin-bottom: 1.2rem;
+        }
+        .calc-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .calc-group select, .calc-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .calc-result {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #eafaf1;
+            border-left: 4px solid #2ecc71;
+            border-radius: 4px;
+        }
+        .btn-booking {
+            display: inline-block;
+            background: #f39c12;
+            color: #1a1a1a;
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-top: 1rem;
+        }
+        .btn-booking:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #1a1a1a;
+            color: #bbb;
+            margin-top: 3rem;
+        }
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 2rem; }
+            header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>TRZEBIATECH</h1>
+        <p>Usługi Elektryczne & Kompleksowa Budowa Domków Modułowych</p>
+    </header>
+
+    <nav>
+        <a href="#o-nas">O nas</a>
+        <a href="#uslugi">Usługi</a>
+        <a href="#kalkulator">Szybka Wycena</a>
+        <a href="#zasięg">Zasięg</a>
+        <a href="#galeria">Realizacje</a>
+        <a href="#kontakt">Rezerwacja / Kontakt</a>
+    </nav>
+
+    <div class="hero">
+        <h2>Bezpieczeństwo, Precyzja i Budowa od A do Z</h2>
+        <p>Nowoczesne instalacje elektryczne oraz kompleksowe stawianie domków modułowych pod klucz.</p>
+    </div>
+
+    <div class="container">
+
+        <section id="o-nas">
+            <h2>O nas</h2>
+            <p>Jesteśmy wykwalifikowanym, 3-osobowym zespołem fachowców specjalizujących się w zaawansowanych pracach elektrycznych oraz kompleksowym stawianiu domków modułowych od A do Z. Łączymy wiedzę z zakresu nowoczesnych instalacji, automatyki i pomiarów z precyzyjnym montażem konstrukcji modułowych. Bierzemy odpowiedzialność za cały proces – od przygotowania terenu i przyłączy, przez montaż obiektu, aż po wykończenie i odbiór. Stawiamy na najwyższe standardy bezpieczeństwa, terminowość oraz bezkompromisową jakość.</p>
+        </section>
+
+        <section id="uslugi">
+            <h2>Nasze Usługi</h2>
+            <div class="features-grid">
+                <div class="feature-card highlight">
+                    <h3>Domki Modułowe od A do Z</h3>
+                    <p>Kompleksowe wykonanie: przygotowanie podłoża, montaż konstrukcji, uzbrojenie w pełną instalację elektryczną i wod-kan, prace wykończeniowe oraz przekazanie gotowego obiektu pod klucz.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Instalacje i Rozdzielnice</h3>
+                    <p>Montaż nowych oraz modernizacja istniejących instalacji w domach, mieszkaniach i obiektach komercyjnych. Profesjonalny prefabrykat i składanie rozdzielnic.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Pomiary i Odbiory</h3>
+                    <p>Kompleksowe pomiary elektryczne (odbiorcze i okresowe), przygotowanie dokumentacji dla dostawców energii oraz sprawna lokalizacja usterek.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Automatyka i Serwis</h3>
+                    <p>Wdrażanie systemów automatyki budynkowej, naprawa awarii elektrycznych oraz integracja inteligentnych rozwiązań w domkach modułowych i tradycyjnych.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sekcja Kalkulatora dla Klienta i Wycen -->
+        <section id="kalkulator">
+            <h2>Szybka Szacunkowa Wycena AI</h2>
+            <p>Wybierz interesujący Cię zakres i sprawdź szacowany koszt realizacji:</p>
+
+            <div class="calc-box">
+                <div class="calc-group">
+                    <label for="service-type">Rodzaj usługi:</label>
+                    <select id="service-type" onchange="toggleInputs()">
+                        <option value="elektryka">Instalacja Elektryczna (Metraż + Punkty)</option>
+                        <option value="domek">Domek Modułowy od A do Z (Pod Klucz)</option>
+                    </select>
+                </div>
+
+                <div class="calc-group">
+                    <label for="size-input" id="size-label">Powierzchnia budynku (m²):</label>
+                    <input type="number" id="size-input" value="50" min="10" max="500" oninput="calculateEstimate()">
+                </div>
+
+                <div class="calc-group" id="points-group">
+                    <label for="points-input">Szacowana liczba punktów elektrycznych (gniazda, włączniki, punkty świetlne):</label>
+                    <input type="number" id="points-input" value="40" min="1" max="300" oninput="calculateEstimate()">
+                </div>
+
+                <div class="calc-result" id="calc-output">
+                    Szacowany koszt: ~7,800 - 12,200 PLN
+                </div>
+                <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">* Wycena ma charakter orientacyjny. Dokładny kosztorys przygotowujemy bezpłatnie po zapoznaniu się ze szczegółami projektu.</p>
+            </div>
+        </section>
+
+        <section id="zasięg">
+            <h2>Obszar Działania</h2>
+            <p>Siedziba firmy TRZEBIATECH znajduje się w <strong>Szczecinie</strong>. Realizujemy projekty na terenie całego miasta oraz w promieniu do <strong>100 km</strong>. Dojeżdżamy na miejsce i zapewniamy pełną obsługę logistyczną.</p>
+        </section>
+
+        <section id="galeria">
+            <h2>Nasze Realizacje</h2>
+            <p>Zobacz przykłady naszych prac instalacyjnych i montażowych:</p>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="praca.jpg" alt="Realizacja instalacji elektrycznej Szczecin"></div>
+                <div class="gallery-item"><img src="praca2.jpg" alt="Montaż rozdzielnicy elektrycznej"></div>
+                <div class="gallery-item"><img src="praca3.jpg" alt="Pomiary elektryczne i odbiór"></div>
+                <div class="gallery-item"><img src="praca4.jpg" alt="Domek modułowy montaż"></div>
+                <div class="gallery-item"><img src="praca5.jpg" alt="Prace wykończeniowe w domku modułowym"></div>
+                <div class="gallery-item"><img src="praca6.jpg" alt="Instalacja automatyki budynkowej"></div>
+                <div class="gallery-item"><img src="praca7.jpg" alt="Okablowanie i puszki elektryczne"></div>
+                <div class="gallery-item"><img src="praca8.jpg" alt="Gotowa realizacja domku modułowego"></div>
+            </div>
+        </section>
+
+        <section id="kontakt" style="text-align: center;">
+            <h2>Zarezerwuj termin / Zamów bezpłatną wycenę</h2>
+            <p style="margin-bottom: 1rem;">Wypełnij formularz, a skontaktujemy się z Tobą w ciągu 24h z przygotowaną ofertą:</p>
+
+            <a href="https://tally.so/r/RGepad" target="_blank" class="btn-booking">Otwórz formularz rezerwacji</a>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 TRZEBIATECH - Usługi Elektryczne & Domki Modułowe A-Z. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script>
+        function toggleInputs() {
+            const type = document.getElementById('service-type').value;
+            const pointsGroup = document.getElementById('points-group');
+
+            if (type === 'domek') {
+                pointsGroup.style.display = 'none';
+            } else {
+                pointsGroup.style.display = 'block';
+            }
+            calculateEstimate();
+        }
+
+        function calculateEstimate() {
+            const type = document.getElementById('service-type').value;
+            const size = parseFloat(document.getElementById('size-input').value) || 0;
+            const points = parseFloat(document.getElementById('points-input').value) || 0;
+            const output = document.getElementById('calc-output');
+
+            if (type === 'elektryka') {
+                // Metraż: 60 - 100 zł/m²
+                // Punkty: 120 - 180 zł/punkt
+                const min = (size * 60) + (points * 120);
+                const max = (size * 100) + (points * 180);
+                output.innerHTML = `Szacowany koszt instalacji (${size} m² + ${points} pkt): <strong>${min.toLocaleString()} - ${max.toLocaleString()} PLN</strong>`;
+            } else if (type === 'domek') {
+                // Domek modułowy: 2800 - 4200 zł/m²
+                const min = size * 2800;
+                const max = size * 4200;
+                output.innerHTML = `Szacowany koszt domku A-Z (${size} m²): <strong>${min.toLocaleString()} - ${max.toLocaleString()} PLN</strong>`;
+            }
+        }
+
+        // Inicjalizacja przy załadowaniu strony
+        toggleInputs();
+    </script>
+</body>
+</html>
